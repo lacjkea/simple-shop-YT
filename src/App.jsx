@@ -39,6 +39,28 @@ function App() {
     console.log("ATC", data);
   }
 
+  function removeFromCart(id) {
+    console.log(`will remove ${id}`);
+    //if amount is 1, remove entirely
+    //else -1
+
+    // setCart((oldCart) => oldCart);
+
+    //find and modify a product - and filter (we can do that in the same statement - jofh)
+
+    setCart((oldCart) => {
+      const subtracted = oldCart.map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: item.amount - 1 };
+        }
+        return item;
+      });
+      console.log("subtracted-log", subtracted);
+      const filtered = subtracted.filter((item) => item.amount > 0);
+      return filtered;
+    });
+  }
+
   useEffect(() => {
     async function getData() {
       const res = await fetch("https://kea-alt-del.dk/t7/api/products");
@@ -51,7 +73,7 @@ function App() {
     <div className="App">
       <Header />
       <ProductList products={products} addToCart={addToCart} />
-      <Basket products={products} cart={cart} />
+      <Basket removeFromCart={removeFromCart} products={products} cart={cart} />
     </div>
   );
 }
