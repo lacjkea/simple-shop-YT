@@ -13,7 +13,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-} /* 
+}
+
+.App {
+  display: grid;
+  grid-template-columns: auto 200px; /* 200px*/
+}
+
+.Header {
+  background-color: royalblue;
+  grid-column: 1 / -1;
+}
+
+.ProductList {
+  background-color: lightblue;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  .Product {
+    background-color: hotpink;
+  }
+}
+
+.Basket {
+  background-color: orange;
+}
+/* 
 
 a {
   font-weight: 500;
@@ -68,4 +92,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
- */
+ */ ;
