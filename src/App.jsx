@@ -7,13 +7,14 @@ function App() {
   const [products, setProducts] = useState([]);
 
   //we need to communicate cart to the children
-  const [cart, setCart] = useState([
+  /*   const [cart, setCart] = useState([
     {
       name: "x",
       price: 1234,
       amount: 2,
     },
-  ]);
+  ]); */
+  const [cart, setCart] = useState([]);
 
   function addToCart(data) {
     //Do we have the product
