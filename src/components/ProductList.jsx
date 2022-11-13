@@ -5,7 +5,8 @@ function ProductList(props) {
     <main className="ProductList">
       {/* <Product /> */}
       {props.products.map((product) => (
-        <Product key={product.id} {...product} />
+        /*      <Product key={product.id} {...product} addToCart={props.addToCart} /> */
+        <Product key={product.id} data={product} addToCart={props.addToCart} />
       ))}
     </main>
   );
