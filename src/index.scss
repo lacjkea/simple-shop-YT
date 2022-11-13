@@ -14,7 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+img {
+  max-width: 100%;
+}
 .App {
   display: grid;
   grid-template-columns: auto 200px; /* 200px*/
@@ -28,7 +30,8 @@
 .ProductList {
   background-color: lightblue;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: auto;
   .Product {
     background-color: hotpink;
   }

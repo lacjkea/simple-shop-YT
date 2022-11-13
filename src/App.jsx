@@ -8,7 +8,9 @@ function App() {
 
   useEffect(() => {
     async function getData() {
-      const res = await fetch("https://kea-alt-del.dk/t7/api/products");
+      const res = await fetch(
+        "https://kea-alt-del.dk/t7/api/products?limit=100"
+      );
       const data = await res.json();
       setProducts(data);
     }
@@ -17,8 +19,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <ProductList />
-      <Basket />
+      <ProductList products={products} />
+      <Basket products={products} />
     </div>
   );
 }
